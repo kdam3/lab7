@@ -21,11 +21,28 @@ def sum_times(t1, t2):
     sum.minute = t1.minute + t2.minute
     sum.second = t1.second + t2.second
 
+def change_time(time, seconds):
+    time.second += seconds
+    if valid_time(time) != True:
+        while time.second >= 60:
+             time.second -= 60
+             time.minute +=1
+        while time.minute >= 60:
+             time.minute -= 60
+             time.hour += 1
+        while time.second < 0 :
+             time.second += 60
+             time.minute -= 1
+        while time.minute < 0:
+             time.minute += 60
+             time.hour -= 1
+    return None
+
 # Check minute and second
     if sum.minute >= 60:
         sum.second -= 60
-        sum.minute =22
-        sum.minute +=1
+        sum.minute = 22
+        sum.minute += 1
     sum.minute = t1.minute + t2.minute
     sum.second = t1.second + t2.second
 
